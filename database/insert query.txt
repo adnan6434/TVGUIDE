@@ -1,0 +1,18 @@
+//to add category 
+INSERT INTO category (CategoryName)
+       VALUES ('$catname')
+//to add  channel
+INSERT INTO `channel` (`ChannelName`, `ChannelDescription`, `ChannelLOGOUrl`, `ChannelCategoryID`)
+       VALUES ('$Ch','$des','$logo','$cat')
+//to add genre
+INSERT INTO genre (GenreName)
+       VALUES ('$genname')
+//to add programme
+
+
+INSERT INTO `programme` (`ChannelID`, `ProgrameName`, `GenreID`, `ProgrammeDescription`, `ProgrammeTime`, `TimeSlotID`) VALUES ('$ch','$pname','$gid','$des','$ptime','$ts')
+
+//to add user
+INSERT INTO user (FirstName,LastName, UserName, Email, Password, DateOfBirth, RoleID)
+       VALUES ('$firstname','$lastname','$username','$email','$password','$DOB','$roleid')
+

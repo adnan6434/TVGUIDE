@@ -1,0 +1,118 @@
+//display query for channel details page
+SELECT * FROM `channel` WHERE channelID=$cid
+//
+SELECT CategoryName from category,channel where  channelID=$cid and category.CategoryID=channel.ChannelCategoryID
+
+//
+SELECT * FROM channel ORDER by ChannelName asc
+
+//to ensure channelbookmark and giving the option to remove bookmark
+SELECT * from channelbookmark,user,channel  
+where channelbookmark.ChannelID=channel.ChannelID 
+and channelbookmark.UserID=user.Id
+
+//to ensure Programmebookmark and giving the option to remove bookmark
+SELECT * from programmebookmark,user,channel  
+where programmebookmark.ChannelID=channel.ChannelID 
+and programmebookmark.UserID=user.Id
+
+//shows programName & programTime
+select ProgramName , ProgramTime from programme
+
+
+
+//shows those programme which has one hour duration
+select * from Programme where TimeSlotID=(select TimeslotID from timeslot where SlotDuration='one hour')
+
+
+//shows those programme name which was bookmarked by User
+select user.UserID,UserName,channelbookmark.ChannelBookMarkID,ChannelName 
+from user,channel,channelbookmark 
+where 
+user.UserId=channelbookmark.UserID
+and 
+channelbookmark.ChannelID= channel.ChannelID
+
+//to see all the bookmarks of an individual user 
+SELECT * from channelbookmark,user,channel where channelbookmark.UserID=1 and channelbookmark.ChannelID=channel.ChannelID 
+//individual.s all channel bookmarks
+SELECT distinct ChannelName from channelbookmark,user,channel where channelbookmark.UserID=$usid and channelbookmark.ChannelID=channel.ChannelID"
+//all the reviews
+SELECT * FROM review,programme where programme.ProgrammeID = review.ProgrammeID 
+
+
+
+// shows those channel name which was bookmarked by user 
+select ChannelName from channel where channel.ChannelID=(select ChannelID from channelbookmark,user where user.ID=ChannelBookmark.UserID);
+
+
+
+// shows those programme which has three hour duration
+select * from Programme where TimeSlotID=(select TimeslotID from timeslot where SlotDuration='three hour')
+
+//shows the channels which was bookmarked
+ 
+select channel.ChannelID,ChannelName,ChannelBookMarkID from ChannelBookMark where channel.ChannelID=ChannelBookMark.channelID 
+//shows the channels which was bookmarked
+ 
+select channel.ChannelID,ChannelName,ChannelBookMarkID from ChannelBookMark where channel.ChannelID=ChannelBookMark.channelID 
+
+ 
+//shows which channel will telecast which programme
+select Programme.ChannelID,ChannelName,Programname group by ChannelID having channel.ChannelID=Programme.ChannelID
+
+
+
+//shows those username which is only of user's
+select UserName,Rolename from user, role where user.RoleID=role.RoleID and Rolename='user'
+
+
+
+//shows details about channel
+select ChannelName,ChannelDescription from channel
+
+ 
+//shows which channel will telecast which programme
+select Programme.ChannelID,ChannelName,Programname group by ChannelID having channel.ChannelID=Programme.ChannelID
+
+
+
+//shows those username which is only of user's
+select UserName,Rolename from user, role where user.RoleID=role.RoleID and Rolename='user'
+
+
+
+//shows details about channel
+select ChannelName,ChannelDescription from channel
+
+
+//shows user name which has given review 
+select FirstName+" "+LastName as"Name" from user,review where review.UserID=user.ID GROUP BY Name ORDER BY Name
+
+
+//shows those programme which has two hour duration
+select * from Programme where TimeSlotID=(select TimeslotID from timeslot where SlotDuration='two hour')
+
+//shows the GenreName of each Programme
+
+Select ProgrammeName , GenreName from Programme , Genre where Genre.GenreID= Programme.GenreID
+
+
+//shows which channel are of which category
+Select ChannelName, CategoryName from channel, category where channel.ChannelCategoryID= category.CategoryID
+
+
+
+
+select Firstname,LastName,Email from User
+
+
+//shows the programme which has maximum rating 
+select * from Progamme where ProgrammeID=(select ProgrammeId from review where Rating = (select max(Rating) from review))
+
+
+
+
+
+
+

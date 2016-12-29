@@ -1,0 +1,25 @@
+INSERT INTO `rights` (`RightID`, `Rights`) VALUES ('1', 'view'), ('2', 'add'), ('3', 'update'), ('4', 'delete');
+
+INSERT INTO `roledefination` (`RightID`, `RoleID`) VALUES ('1', '1'), ('1', '2'), ('2', '1'), ('3', '1'), ('4', '1');
+
+INSERT INTO `timeslot` (`TimeslotID`, `SlotDuration`) VALUES ('1', 'Half_hour'), ('2', '1 Hour'), ('3', '2 hour'), ('4', '3 hour');
+INSERT INTO `role` (`RoleID`, `Rolename`) VALUES
+(1, 'admin'),
+(2, 'user');
+
+INSERT INTO `category` (`CategoryID`, `CategoryName`) VALUES ('1', 'Sports'), ('2', 'Regional'), ('3', 'Information and science'), ('4', 'Entertainment'), ('5', 'News'), ('6', 'Children'), ('7', 'Music'), ('8', 'Movies');
+INSERT INTO `channel` (`ChannelID`, `ChannelName`, `ChannelDescription`, `ChannelLOGOUrl`, `ChannelCategoryID`) VALUES
+(1, 'Star sports 1', 'telecasts sports like cricket football etc', 'img/p3.png', 1),
+(2, 'EKATTOR TV', 'telecasts news of all types', 'img/p9.png', 2),
+(3, 'DISCOVERY HD', 'telecasts various type of program related to knowledge & science ', 'img/p7.png', 3),
+(4, 'Zcafe HD', 'telecasts program related to fashion & life style', 'img/p0.png', 4),
+(5, 'BTV', 'telecasts various type of program like sports, national ceremony, movie, songs etc.', 'img/btv.png', 2),
+(6, 'Cartoon network', 'shows cartoon & other regional program', 'img/p8.png', 6),
+(7, 'Mtunes', 'telecasts music ', 'img/p6.png', 7),
+(8, 'Zstudio', 'telecasts movies', 'img/p2.png', 8),
+(9, 'ATN Bangla', 'Regional Entertainment channel ', 'img/atn.jpg', 2),
+(10, 'Channel I', 'Regional Entertainment channel ', 'img/channeli.jpg', 2);
+
+INSERT INTO `tellyguide`.`genre` (`GenreID`, `GenreName`) VALUES ('1', 'entertainment '), ('2', 'children'), ('3', 'wildlife'), ('4', 'scientific '), ('5', 'action'), ('6', 'reality show'), ('7 ', 'horror'), ('8 ', 'travel'), ('9', 'manufactural '), ('10', 'live sports'), ('11', 'historical '), ('12', 'documentary');
+INSERT INTO `tellyguide`.`programme` (`ProgrammeID`, `ChannelID`, `ProgrameName`, `GenreID`, `ProgrammeDescription`, `ProgrammeTime`, `TimeSlotID`) VALUES ('1', '1', 'England vs Pakistan T20', '10', 'cricket game ', '2016-09-01 05:00:00', '3'), ('2', '1', 'Post match review', '10', 'match report ', '2016-09-01 08:00:00', '1'), ('3', '1', 'pre match review of Arsenal vs Liverpool', '10', 'football analysis', '2016-09-01 09:00:00', '1'), ('4', '1', 'Arsenal vs Liverpool live', '10', 'live football of BPL', '2016-09-01 10:00:00', '3'), ('5', '2', 'Tritiyo mattra', '1', 'political discussion of various personality', '2016-09-01 05:00:00', '3'), ('6', '2', 'news @ 8', '1', 'news of current hour', '2016-09-01 08:00:00', '1'), ('7', '2', 'rater adda', '1', 'discussion of various interesting topics ', '2016-09-01 09:00:00', '3'), ('8', '3', 'Man vs wild', '3', 'surviving in wild life ', '2016-09-01 05:00:00', '3'), ('9', '3', 'How sex changed this world', '4', 'revulation of mankind', '2016-09-01 08:00:00', '3'), ('10', '3', 'under the sea', '1', 'shows world under sea water', '2016-09-01 11:00:00', '1'), ('11', '4', 'here we go!!', '6', 'reality show which include many stuns', '2016-09-01 05:00:00', '3'), ('12', '4', 'Coffee with Karan', '12', 'Karan takes interview of celebraties ', '2016-09-01 08:00:00', '3'), ('13', '4', 'Can you do it!', '6', 'performs impossible magic', '2016-09-01 11:00:00', '1'), ('14', '5', 'Ittadi', '1', 'program directed by Hanif Shogket', '2016-09-01 05:00:00', '3'), ('15', '5', 'Preview Bangladesh vs India ', '10', 'cricket match', '2016-09-01 08:00:00', '1'), ('16', '5', 'Bangladesh vs India T20 live', '10', 'live cricket between Bangladesh & India', '2016-09-16 09:00:00', '3'), ('17', '6', 'Tom & jerry', '2', 'cartoon show', '2016-09-01 05:00:00', '3'), ('18', '6', 'Papai ', '2', 'cartoon show', '2016-09-01 08:00:00', '1'), ('19', '6', 'Batman Returns', '5', 'movie of comic hero Batman', '2016-09-01 09:00:00', '3'), ('20', '7', 'hit it', '1', 'songs', '2016-09-01 05:00:00', '3'), ('21', '7', 'evening hits', '1', 'songs', '2016-09-01 08:00:00', '3'), ('22', '7', 'Romance hour', '1', 'romantic songs', '2016-09-01 11:00:00', '1'), ('23', '8', 'Titanic', '1', 'movie', '2016-09-01 05:00:00', '3'), ('24', '8', 'Battleships', '5', 'movie', '2016-09-01 08:00:00', '3'), ('25', '8', 'action hour', '5', 'movie clips of action scenes', '2016-09-01 11:00:00', '1');
+INSERT INTO `tellyguide`.`user` (`Id`, `FirstName`, `LastName`, `UserName`, `Email`, `Password`, `DateOfBirth`, `RoleID`) VALUES ('1', 'admin', 'admin', 'admin', 'admin@gmail.com', 'admin123', '1993-12-28', '1');
