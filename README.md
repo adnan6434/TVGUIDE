@@ -1,3 +1,3 @@
 # Tellyguide
 academic project made with php
-this was my database project for last semester .
+this was for database project for 3rd year 1st semester in my univarsity.
